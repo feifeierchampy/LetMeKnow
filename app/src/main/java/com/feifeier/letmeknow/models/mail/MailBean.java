@@ -1,4 +1,4 @@
-package com.feifeier.letmeknow.mail;
+package com.feifeier.letmeknow.models.mail;
 
 import java.util.Properties;
 

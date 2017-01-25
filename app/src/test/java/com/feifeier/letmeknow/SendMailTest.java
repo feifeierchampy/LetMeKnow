@@ -1,6 +1,6 @@
 package com.feifeier.letmeknow;
 
-import com.feifeier.letmeknow.mail.MailSender;
+import com.feifeier.letmeknow.models.mail.MailSender;
 
 import org.junit.Test;
 

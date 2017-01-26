@@ -9,6 +9,10 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import static com.feifeier.letmeknow.config.MailConfig.FROM_MAIL_ADDRESS;
+import static com.feifeier.letmeknow.config.MailConfig.FROM_MAIL_PASSWORD;
+import static com.feifeier.letmeknow.config.MailConfig.MAIL_SERVER_HOST;
+
 /**
  * Created by CHAMPION on 2016/5/22.
  */
@@ -17,18 +21,14 @@ public class MailSender {
     public void sendEmail() throws MessagingException {
         Properties properties = new Properties();
 
-//        properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-//        properties.setProperty("mail.smtp.port", "465");
-//        properties.setProperty("mail.smtp.socketFactory.port", "465");
-        properties.put("mail.smtp.host", "smtp.163.com");
-//        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.host", MAIL_SERVER_HOST);
 
         // 基本的邮件会话
         Session session = Session.getInstance(properties);
         // 构造信息体
         MimeMessage message = new MimeMessage(session);
         // 发件地址
-        Address address = new InternetAddress("champy123@163.com");
+        Address address = new InternetAddress(FROM_MAIL_ADDRESS);
         message.setFrom(address);
 
         // 收件地址
@@ -44,7 +44,7 @@ public class MailSender {
         session.setDebug(true);
 
         Transport transport = session.getTransport("smtp");
-        transport.connect("smtp.163.com", "champy123@163.com", "l137301794011");
+        transport.connect(MAIL_SERVER_HOST, FROM_MAIL_ADDRESS, FROM_MAIL_PASSWORD);
 
         message.saveChanges();
 

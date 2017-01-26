@@ -6,8 +6,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ff12"
-        android:text="aaaa"
+        android:text="输入接受通知的邮箱名"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
         />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/et_input_email"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_start_service"
+        android:text="开启服务"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

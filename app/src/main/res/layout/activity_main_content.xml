@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="输入接受通知的邮箱名"
-        android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
-        />
+        android:layout_marginTop="100dp"
+        android:text="输入接受通知的邮箱名" />
+
     <EditText
+        android:id="@+id/et_input_email"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/et_input_email"/>
+        android:layout_gravity="center_horizontal" />
+
     <Button
+        android:id="@+id/btn_start_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_start_service"
-        android:text="开启服务"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:text="开启服务" />
 
 </LinearLayout>

@@ -13,6 +13,7 @@ public final class MailConfig {
     // 发件人邮箱地址
     public static final String FROM_MAIL_ADDRESS = "letmeknow_service@163.com";
     // 发件人邮箱密码...
-    public static final String FROM_MAIL_PASSWORD = "22@163";
+    // 被知道密码了...
+    public static final String FROM_MAIL_PASSWORD = "222@163";
 
 }

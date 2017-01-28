@@ -14,7 +14,11 @@ public class SendMailTest {
 
     @Test
     public void test_sendEmail() throws MessagingException, InterruptedException {
-        MailSender sendMail = new MailSender();
-        sendMail.sendEmail();
+        MailSender mailSender = new MailSender.Builder()
+                .toMailAddress("332560026@qq.com")
+                .build();
+
+        mailSender.send("you don't hava to", "you don't have to give it all away");
+//        mailSender.sendEmail();
     }
 }

@@ -4,24 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:text="输入接受通知的邮箱名" />
+
 
     <EditText
         android:id="@+id/et_input_email"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:textCursorDrawable="@drawable/edittext_cursor"
+        android:hint="输入接受通知的邮箱名"
+        android:includeFontPadding="false"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/btn_start_service"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="8dp"
         android:text="开启服务" />
 
 </LinearLayout>

@@ -6,6 +6,5 @@
     android:orientation="vertical"
     >
     <include layout="@layout/toolbar"/>
-
     <include layout="@layout/drawerlayout"/>
 </LinearLayout>

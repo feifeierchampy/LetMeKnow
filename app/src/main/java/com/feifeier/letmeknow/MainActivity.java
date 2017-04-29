@@ -1,11 +1,16 @@
 package com.feifeier.letmeknow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
+
+import com.feifeier.letmeknow.managers.service.SmsListenerService;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView mNavigationView;
     private Toolbar mToolbar;
 
-
+    private Button mBtnStartService;
 
 
     @Override
@@ -23,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initViews();
+        initListeners();
+    }
+
+    private void initListeners() {
+        mBtnStartService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SmsListenerService.class);
+                startService(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -38,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mActionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
+        mBtnStartService = findView(R.id.btn_start_service);
     }
 
     private <T> T findView(int resId) {
